@@ -1,0 +1,42 @@
+{
+  "name": "naming-transform",
+  "version": "0.0.1",
+  "description": "Transform object keys naming style.",
+  "main": "src/index.jsx",
+  "scripts": {
+    "build": "babel src -d build",
+    "watch": "babel src -d build -w",
+    "lint": "cs --eslint src/ test/",
+    "test": "mocha --compilers js:babel/register",
+    "release": "npm run lint && npm run test && npm run build && npm publish"
+  },
+  "files": [
+    "build/",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiu8310/naming-transform.git"
+  },
+  "keywords": [
+    "naming",
+    "transform",
+    "style",
+    "camel",
+    "kebab",
+    "case"
+  ],
+  "author": "Mora",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qiu8310/naming-transform/issues"
+  },
+  "homepage": "https://github.com/qiu8310/naming-transform#readme",
+  "devDependencies": {
+    "babel": "^5",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4",
+    "should": "^7.1.1"
+  },
+  "dependencies": {}
+}

@@ -1,6 +1,8 @@
 # naming-transform
 
 
+## Doc
+
 ```js
 /**
  *
@@ -17,6 +19,24 @@
  *
  * @return {Object}  转化后的对象，原对象不会被破坏
  */
+
+```
+
+## Usage
+
+```js
+
+const transform = require('naming-transform');
+
+// default transform to camelCase
+transform({foo_bar: 'x'}); // => {fooBar: 'x'}
+
+// transform to snakeCase
+transform({'foo bar': 'x'}, {naming: 'snake'}); // => {foo_bar: 'x'}
+
+// support `deep` option, default will transform all nested object
+transform({a_b: {b_c: 'x'}});  // => {aB: {bC: 'x'}}
+transform({a_b: {b_c: 'x'}}, {deep: 1}); // => {aB: {b_c: 'x'}}
 
 ```
 

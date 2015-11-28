@@ -1,14 +1,14 @@
 {
   "name": "naming-transform",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Transform object keys naming style.",
-  "main": "src/index.jsx",
+  "main": "build/index.js",
   "scripts": {
     "build": "babel src -d build",
     "watch": "babel src -d build -w",
     "lint": "cs --eslint src/ test/",
     "test": "mocha --compilers js:babel/register",
-    "release": "npm run lint && npm run test && npm run build && npm publish"
+    "release": "npm run lint && npm run test && npm run build && npm publish -d"
   },
   "files": [
     "build/",

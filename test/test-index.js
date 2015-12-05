@@ -38,6 +38,10 @@ describe('index', () => {
         {aa: 'b', cc: 'd'}
       );
     });
+
+    it('should transform string node', () => {
+      trans('a-b-c').should.eql('aBC');
+    });
   });
 
   context('option deep', () => {

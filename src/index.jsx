@@ -14,7 +14,8 @@ function wrap(str, fn) {
 const transformers = {
   camel(str) {
     return wrap(str, (result, word, index) => {
-      return result + (index ? word.charAt(0).toUpperCase() + word.slice(1) : word);
+      let fn = index ? 'toUpperCase' : 'toLowerCase';
+      return result + word.charAt(0)[fn]() + word.slice(1);
     });
   },
   cap(str) {

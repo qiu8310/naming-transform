@@ -8,7 +8,7 @@ describe('index', () => {
 
   context('option naming', () => {
     it('should default transform to camelCase', () => {
-      should.deepEqual(trans({'are you': 'x'}), {areYou: 'x'});
+      should.deepEqual(trans({'Are you': 'x'}), {areYou: 'x'});
     });
 
     it('should transform to kebabCase', () => {

@@ -25,6 +25,13 @@ describe('index', () => {
       );
     });
 
+    it('should transform to capCase', () => {
+      should.deepEqual(
+        trans({encodeURLComp: 'x'}, {naming: 'cap'}),
+        {'EncodeURLComp': 'x'}
+      );
+    });
+
     it('should support custom naming', () => {
       should.deepEqual(
         trans({a: 'b', c: 'd'}, {naming: (key) => key + key}),

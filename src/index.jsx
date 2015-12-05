@@ -17,6 +17,11 @@ const transformers = {
       return result + (index ? word.charAt(0).toUpperCase() + word.slice(1) : word);
     });
   },
+  cap(str) {
+    return wrap(str, (result, word, index) => {
+      return result + word.charAt(0).toUpperCase() + word.slice(1);
+    });
+  },
   kebab(str) {
     return wrap(str, (result, word, index) => {
       return result + (index ? '-' : '') + word.toLowerCase();
@@ -37,7 +42,7 @@ const transformers = {
  * @param  {Number} [options.deep = 0]          处理的深度
  *
  * @param  {String|Function} [options.naming = 'camel']
- *         命名风格，支持 camel, kebab, snake，或自定义方法
+ *         命名风格，支持 camel, cap, kebab, snake，或自定义方法
  *
  *         如果指定了函数，函数得到的参数会是 (key, deep, currentObject)，函数需要返回 newKey
  *         如果函数返回 false，则忽略更新此时的 key，

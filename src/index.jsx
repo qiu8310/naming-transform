@@ -35,6 +35,9 @@ const transformers = {
   }
 };
 
+let {camel, cap, kebab, snake} = transformers;
+export {camel, cap, kebab, snake};
+
 /**
  *
  * 将 source 中的 Object 的 keys 的命名风格全部转换成指定的 naming 命名风格

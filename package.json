@@ -1,8 +1,9 @@
 {
   "name": "naming-transform",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Transform object keys naming style.",
   "main": "build/index.js",
+  "jsnext:main": "src/index.jsx",
   "scripts": {
     "build": "babel src -d build",
     "watch": "babel src -d build -w",
@@ -11,6 +12,7 @@
     "release": "npm run lint && npm run test && npm run build && npm publish -d"
   },
   "files": [
+    "src/",
     "build/",
     "README.md"
   ],

@@ -11,16 +11,21 @@ function wrap(str, fn) {
   return str.match(reWords).reduce(fn, '');
 }
 
-const transformers = {
+let transformers = {
   camel(str) {
     return wrap(str, (result, word, index) => {
       let fn = index ? 'toUpperCase' : 'toLowerCase';
       return result + word.charAt(0)[fn]() + word.slice(1);
     });
   },
-  cap(str) {
+  capCamel: function (str) {
     return wrap(str, (result, word, index) => {
       return result + word.charAt(0).toUpperCase() + word.slice(1);
+    });
+  },
+  upper: function (str) {
+    return wrap(str, (result, word, index) => {
+      return result + (index ? '_' : '') + word.toUpperCase();
     });
   },
   kebab(str) {
@@ -34,9 +39,10 @@ const transformers = {
     });
   }
 };
+transformers.cap = capCamel; // 为了向后兼容
 
-let {camel, cap, kebab, snake} = transformers;
-export {camel, cap, kebab, snake};
+let {camel, cap, kebab, snake, capCamel, upper} = transformers;
+export {camel, cap, kebab, snake, capCamel, upper};
 
 /**
  *

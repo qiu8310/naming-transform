@@ -27,7 +27,7 @@ describe('index', () => {
 
     it('should transform to capCase', () => {
       should.deepEqual(
-        trans({encodeURLComp: 'x'}, {naming: 'cap'}),
+        trans({encodeURLComp: 'x'}, {naming: 'capCamel'}),
         {'EncodeURLComp': 'x'}
       );
     });

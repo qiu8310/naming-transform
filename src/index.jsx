@@ -59,8 +59,8 @@ export {camel, cap, kebab, snake, capCamel, upper};
  *
  * @return {Object}  转化后的对象，原对象不会被破坏
  */
-export default function (source, {deep = 0, naming = 'camel'} = {}) {
-  if (typeof source === 'string') {
+export default function (source, {deep = 0, naming = 'camel', stringify = false} = {}) {
+  if (stringify && typeof source === 'string') {
     return transform(source, naming, deep, null);
   }
   return walk(source, deep, naming);
@@ -89,7 +89,7 @@ function walk(node, deep, naming) {
   return result;
 }
 
-function transform(key, naming, deep, currentObject) {
+export function transform(key, naming, deep, currentObject) {
   if (typeof naming === 'string' && naming in transformers) {
     return transformers[naming](key);
   } else if (typeof naming === 'function') {

@@ -40,7 +40,8 @@ describe('index', () => {
     });
 
     it('should transform string node', () => {
-      trans('a-b-c').should.eql('aBC');
+      trans('a-b-c', {stringify: false}).should.eql('a-b-c');
+      trans('a-b-c', {stringify: true}).should.eql('aBC');
     });
   });
 

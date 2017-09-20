@@ -39,7 +39,7 @@ let transformers = {
     });
   }
 };
-transformers.cap = capCamel; // 为了向后兼容
+transformers.cap = transformers.capCamel; // 为了向后兼容
 
 let {camel, cap, kebab, snake, capCamel, upper} = transformers;
 export {camel, cap, kebab, snake, capCamel, upper};

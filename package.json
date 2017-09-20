@@ -9,7 +9,7 @@
     "watch": "babel src -d build -w",
     "lint": "cs --eslint src/ test/",
     "test": "mocha --compilers js:babel-register",
-    "release": "npm run lint && npm run test && npm run build && npm publish -d"
+    "release": "npm run lint && npm run test && npm run build && snpm publish -d"
   },
   "files": [
     "src/",
